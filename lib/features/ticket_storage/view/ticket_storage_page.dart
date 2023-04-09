@@ -29,7 +29,7 @@ class _TicketStoragePageState extends State<TicketStoragePage> {
   void updateProgress(int done, int total) {
     progress = done / total;
 
-    print('${(progress * 100).toStringAsFixed(0)} %');
+    debugPrint('${(progress * 100).toStringAsFixed(0)} %');
     streamController.sink.add(progress);
   }
 
@@ -102,7 +102,7 @@ class _TicketStoragePageState extends State<TicketStoragePage> {
             itemBuilder: (context, i) {
               double percent = 0;
               return ListTile(
-                title: Text('Ticket ${i + 1}'),
+                title: Text(box.getAt(i)!.url.split('/').last),
                 subtitle: StreamBuilder(
                     initialData: percent,
                     stream: streamController.stream,
