@@ -117,7 +117,7 @@ class _TicketStoragePageState extends State<TicketStoragePage> {
                     onPressed: () {
                       openFile(url: box.getAt(i)!.url);
                     },
-                    icon: const Icon(Icons.cloud_download_outlined)),
+                    icon: const Icon(Icons.cloud_download_outlined, color: AppColors.primary)),
                 onTap: () {},
               );
             },
